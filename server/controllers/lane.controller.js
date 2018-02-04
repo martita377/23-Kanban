@@ -35,11 +35,11 @@ export function editName(req, res) {
     res.status(403).end();
   }
   Lane.findOneAndUpdate({ id: req.params.laneId }, { $set: { name: req.body.name } },
-    (err, lane) => {
+    (err, updated) => {
       if (err) {
         res.status(500).send(err);
       }
-      res.status(200).end();
+      res.json(updated);
     }
   );
 }
@@ -50,11 +50,12 @@ export function deleteLane(req, res) {
       res.status(500).send(err);
     }
 
-    lane.notes.forEach(function(note) {
-      Note.findOneAndRemove({ id: note.id }, (err, note) => {
+    lane.notes.forEach((note) => {
+      Note.findOneAndRemove({ id: note.id }, (err, success) => {
         if (err) {
           res.status(500).send(err);
         }
+        res.json(success);
       });
     });
 
@@ -64,7 +65,3 @@ export function deleteLane(req, res) {
   });
 }
 
-
-export function getSomething(req, res) {
-  return res.status(200).end();
-}
