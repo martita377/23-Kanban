@@ -2,8 +2,6 @@ import Lane from '../models/lane';
 import Note from '../models/note';
 import uuid from 'uuid';
 
-
-
 export function addLane(req, res) {
   if (!req.body.name) {
     res.status(403).end();
@@ -19,7 +17,7 @@ export function addLane(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    res.json( saved );
+    res.json(saved);
   });
 }
 
@@ -30,13 +28,13 @@ export function getLanes(req, res) {
     }
     res.json({ lanes });
   });
-};
+}
 
 export function editName(req, res) {
   if (!req.body.id) {
     res.status(403).end();
   }
-  Lane.findOneAndUpdate({ id: req.params.laneId }, {$set:{name: req.body.name}},
+  Lane.findOneAndUpdate({ id: req.params.laneId }, { $set: { name: req.body.name } },
     (err, lane) => {
       if (err) {
         res.status(500).send(err);
@@ -53,7 +51,7 @@ export function deleteLane(req, res) {
     }
 
     lane.notes.forEach(function(note) {
-      Note.findOneAndRemove({ id: note.id}, (err, note) => {
+      Note.findOneAndRemove({ id: note.id }, (err, note) => {
         if (err) {
           res.status(500).send(err);
         }

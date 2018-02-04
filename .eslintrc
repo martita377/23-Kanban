@@ -22,7 +22,7 @@
   },
   
   "rules": {
-    “new - cap”: “off”,
+    "new - cap": "off",
     "comma-dangle": [1, "always-multiline"],
     "no-underscore-dangle": 0,
     "max-len": [1, 180, 4],

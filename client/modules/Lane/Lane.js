@@ -7,8 +7,7 @@ import styles from './Lane.css';
 
 class Lane extends Component {
   render() {
-    return (
-    );
+    return;
   }
 }
 

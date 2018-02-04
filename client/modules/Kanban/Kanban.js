@@ -7,8 +7,7 @@ import styles from './Kanban.css';
 
 class Kanban extends Component {
   render() {
-    return (
-    );
+    return;
   }
 }
 

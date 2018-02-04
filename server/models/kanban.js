@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const kanbanSchema = new Schema({
 
 },
-	{usePushEach: true }
+	{ usePushEach: true }
 );
 
 export default mongoose.model('Kanban', kanbanSchema);
