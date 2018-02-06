@@ -12,9 +12,8 @@ const AppReducer = (state = initialState, action) => {
       return {
         showAddPost: !state.showAddPost,
       };
-
-    default:
-      return state;
+		default:
+			return state;
   }
 };
 

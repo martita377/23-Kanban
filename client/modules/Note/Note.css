@@ -1,1 +1,12 @@
-/* Note styles */
+.Note {
+	padding: 10px;
+  background-color: #fff;
+  min-width: 150px;
+  min-height: 80px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+

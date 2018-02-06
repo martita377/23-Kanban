@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+
 import styles from './Note.css';
 
 const Note = props =>
@@ -9,4 +10,3 @@ Note.propTypes = {
 };
 
 export default Note;
-

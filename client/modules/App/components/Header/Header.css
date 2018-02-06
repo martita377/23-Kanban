@@ -1,12 +1,12 @@
 .header {
-  background: #eee url('../../header-bk.png') center;
+  background: #48424f;
   background-size: cover;
   border-bottom: 1px solid #ccc;
 }
 
 .content {
   width: 100%;
-  max-width: 980px;
+  max-width: 1200px;
   margin: auto;
   padding: 64px 16px;
   overflow: auto;
@@ -24,13 +24,7 @@
 }
 
 .add-post-button {
-  display: inline-block;
-  color: #FFF;
-  background: #03A9F4;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 1000px;
-  float: right;
+  display: none;
 }
 
 .language-switcher {

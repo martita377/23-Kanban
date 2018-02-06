@@ -1,8 +1,12 @@
-/* Lane styles */
-
-
 .Lane {
-
+  padding: 10px;
+  background-color: #ddd;
+  width: 290px;
+  min-height: 300px;
+  border: 1px black solid;
+  margin: 10px;
+  display: inline-flex;
+  justify-content: space-around;
 }
 
 .LaneHeader {

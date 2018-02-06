@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import NotesContainer from '../Note/NotesContainer';
+import NotesContainer from '../Note/NoteContainer.js';
 import Edit from '../../components/Edit';
 import { updateLane, editLane, deleteLane } from './LaneActions';
 
@@ -14,15 +14,15 @@ const Lane = (props) => {
         <div className={styles.LaneAddNote}>
           <button onClick={() => addNote({ task: 'New Note' }, laneId)}>Add Note</button>
         </div>
-        <Edit
+        <Edit 
           className={styles.LaneName}
           editing={lane.editing}
           value={lane.name}
-          onValueClick={() => editLane(lane.id)}
+          onValueClick={() => editLane(laneId)}
           onUpdate={name => updateLane({ ...lane, name, editing: false })}
         />
         <div className={styles.LaneDelete}>
-          <button onClick={() => deleteLane(laneId)}>Remove Lane</button>
+          <button onClick={() => deleteLane(laneId)}>Remove lane</button>
         </div>
       </div>
       <NotesContainer
@@ -34,13 +34,13 @@ const Lane = (props) => {
 };
 
 Lane.propTypes = {
-  editLane,
   lane: PropTypes.object,
   laneNotes: PropTypes.array,
   addNote: PropTypes.func,
   updateLane: PropTypes.func,
   deleteLane: PropTypes.func,
+  editLane: PropTypes.func,
 };
 
 export default Lane;
-
+ 
