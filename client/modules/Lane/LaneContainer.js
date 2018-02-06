@@ -11,9 +11,9 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = { 
-	addNote: createNoteRequest,
-	updateLane: updateLaneRequest,
+const mapDispatchToProps = {
+	                    addNote: createNoteRequest,
+	                    updateLane: updateLaneRequest,
   deleteLane: deleteLaneRequest,
 };
 

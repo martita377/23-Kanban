@@ -47,10 +47,13 @@ export function editName(req, res) {
 export function deleteLane(req, res) {
   Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
     if (err) {
-      res.status(500).send(err);
+      return res.status(500).send(err);
     }
 
-    lane.remove(() => {
+    lane.remove((err) => {
+    	                    if (err) {
+    		                    return res.status(500).send(err);
+			                                        }
       res.status(200).end();
     });
   });

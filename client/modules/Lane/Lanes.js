@@ -12,7 +12,7 @@ const Lanes = ({ lanes }) => {
 };
 
 Lanes.propTypes = {
-	lanes: PropTypes.array,
+	                    lanes: PropTypes.array,
 };
 
 export default Lanes;
