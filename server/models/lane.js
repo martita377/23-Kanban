@@ -12,7 +12,16 @@ function populateNotes(next) {
   next();
 }
 
+function deleteLaneWithNotes(next) {
+	const notes = this.notes;
+	notes.forEach(element => {
+		Note.findByIdAndRemove(element._id).exec()
+	});
+	next();
+}
+
 laneSchema.pre('find', populateNotes);
 laneSchema.pre('findOne', populateNotes);
+laneSchema.pre('remove', deleteLaneWithNotes);
 
 export default mongoose.model('Lane', laneSchema);

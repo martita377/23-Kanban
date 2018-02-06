@@ -50,15 +50,6 @@ export function deleteLane(req, res) {
       res.status(500).send(err);
     }
 
-    lane.notes.forEach((note) => {
-      Note.findOneAndRemove({ id: note.id }, (err, success) => {
-        if (err) {
-          res.status(500).send(err);
-        }
-        res.json(success);
-      });
-    });
-
     lane.remove(() => {
       res.status(200).end();
     });
