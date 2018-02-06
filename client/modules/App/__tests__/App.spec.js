@@ -3,7 +3,6 @@ import test from 'ava';
 import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 import { App } from '../App';
-import styles from '../App.css';
 import { intlShape } from 'react-intl';
 import { intl } from '../../../util/react-intl-test-helper';
 import { toggleAddPost } from '../AppActions';
@@ -19,15 +18,15 @@ const props = {
 
 test('renders properly', t => {
   const wrapper = shallow(
-    <App {...props} />
+    <App {...props} />,
   );
 
-  // t.is(wrapper.find('Helmet').length, 1);
   t.is(wrapper.find('Header').length, 1);
   t.is(wrapper.find('Footer').length, 1);
-  t.is(wrapper.find('Header').prop('toggleAddPost'), wrapper.instance().toggleAddPostSection);
-  t.truthy(wrapper.find('Header + div').hasClass(styles.container));
-  t.truthy(wrapper.find('Header + div').children(), children);
+  t.is(wrapper.find('Header')
+    .prop('toggleAddPost'), wrapper.instance().toggleAddPostSection);
+  t.truthy(wrapper.find('Header + div')
+    .children(), children);
 });
 
 test('calls componentDidMount', t => {
@@ -37,7 +36,8 @@ test('calls componentDidMount', t => {
     {
       context: {
         router: {
-          isActive: sinon.stub().returns(true),
+          isActive: sinon.stub()
+            .returns(true),
           push: sinon.stub(),
           replace: sinon.stub(),
           go: sinon.stub(),
@@ -61,10 +61,11 @@ test('calls componentDidMount', t => {
 
 test('calling toggleAddPostSection dispatches toggleAddPost', t => {
   const wrapper = shallow(
-    <App {...props} />
+    <App {...props} />,
   );
 
-  wrapper.instance().toggleAddPostSection();
+  wrapper.instance()
+    .toggleAddPostSection();
   t.truthy(dispatch.calledOnce);
   t.truthy(dispatch.calledWith(toggleAddPost()));
 });
