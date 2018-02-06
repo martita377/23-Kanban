@@ -11,10 +11,7 @@ const Lane = (props) => {
   return (
     <div className={styles.Lane}>
       <div className={styles.LaneHeader}>
-        <div className={styles.LaneAddNote}>
-          <button onClick={() => addNote({ task: 'New Note' }, laneId)}>Add Note</button>
-        </div>
-        <Edit 
+        <Edit
           className={styles.LaneName}
           editing={lane.editing}
           value={lane.name}
@@ -23,6 +20,9 @@ const Lane = (props) => {
         />
         <div className={styles.LaneDelete}>
           <button onClick={() => deleteLane(laneId)}>Remove lane</button>
+        </div>
+        <div className={styles.LaneAddNote}>
+          <button onClick={() => addNote({ task: 'New Note' }, laneId)}>Add Note</button>
         </div>
       </div>
       <NotesContainer
@@ -43,4 +43,4 @@ Lane.propTypes = {
 };
 
 export default Lane;
- 
+

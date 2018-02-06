@@ -1,13 +1,13 @@
 .footer{
   text-align: center;
-  padding: 20px 0;
-  background-size: cover;
+  padding: 10px 0;
+  background: #000;
 }
 
 .footer p {
   margin: 0 0 8px 0;
   font-size: 14px;
-  color: #000;
+  color: #fff;
 }
 
 .footer a {

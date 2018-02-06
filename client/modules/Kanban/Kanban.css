@@ -1,9 +1,7 @@
-.AddLane {
-	font-size: 30px;
-}
 .Container {
-
+	display: flex;
 }
-.LaneContainer {
 
+.LaneContainer {
+	display: flex;
 }

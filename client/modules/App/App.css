@@ -1,13 +1,24 @@
-* {
-	box-sizing: border-box;
-}
 .container {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 .main {
-	max-width: 1200px;
 	background-color: #ccc;
   margin: 0 auto;
-  min-height: calc(100vh - 320px);
+  min-height: calc(100vh - 304px);
+  padding: 15px;
+  margin: 0 auto;
+  background-color: #ccc;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.main>div>button {
+  padding: 10px 5px;
+  margin: 20px;
+  font-size: 20px;
+  color: yellow;
+  border-radius: 5px;
 }

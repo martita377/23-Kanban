@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react';
-import Note from './Note';
+import Note from './Note.js';
+import styles from './Note.css';
 
 import Edit from '../../components/Edit';
 
 const Notes = ({ notes, laneId, editNote, updateNote, deleteNote }) => {
   return (
-  <ul className="notes">
+  <ul className={styles.Notes}>
     {notes.map((note, id) =>
       <Note
         id={note.id}
@@ -35,6 +36,7 @@ Notes.propTypes = {
   laneId: PropTypes.string,
   editNote: PropTypes.func,
   notes: PropTypes.array,
+  editing: PropTypes.bool,
 };
 
 export default Notes;

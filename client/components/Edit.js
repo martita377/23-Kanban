@@ -7,6 +7,7 @@ export default class Edit extends Component {
       this.finishEdit(e);
     }
   };
+
   finishEdit = (e) => {
     const value = e.target.value;
 
@@ -21,6 +22,7 @@ export default class Edit extends Component {
 
   renderValue = () => {
     const { value, onDelete, onValueClick } = this.props;
+
     return (
       <div>
         <span className={styles.value} onClick={onValueClick}>{value}</span>
