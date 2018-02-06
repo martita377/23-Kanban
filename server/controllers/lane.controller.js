@@ -40,15 +40,14 @@ export function editName(req, res) {
     res.status(403)
       .end();
   }
-  Lane.findOneAndUpdate({ id: req.params.laneId }, { $set: { name: req.body.name } },
-    (err, updated) => {
+  Lane.findOneAndUpdate({ id: req.body.id }, { name: req.body.name }, { new: true })
+    .exec((err, updated) => {
       if (err) {
         res.status(500)
           .send(err);
       }
       res.json(updated);
-    },
-  );
+    });
 }
 
 export function deleteLane(req, res) {
