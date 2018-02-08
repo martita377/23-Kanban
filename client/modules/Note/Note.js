@@ -30,7 +30,7 @@ Note.propTypes = {
   children: PropTypes.any,
   connectDragSource: PropTypes.func,
   connectDropTarget: PropTypes.func,
-  isDragging: PropTypes.func,
+  isDragging: PropTypes.bool,
   editing: PropTypes.bool,
 };
 
@@ -50,7 +50,7 @@ const noteTarget = {
   hover(targetProps, monitor) {
     const sourceProps = monitor.getItem();
 
-    if (targetProps.id !== sourceProps.id) {
+    if (targetProps.id !== sourceProps.id && targetProps.laneId === sourceProps.laneId) {
       targetProps.moveWithinLane(targetProps.laneId, targetProps.id, sourceProps.id);
     }
   },
